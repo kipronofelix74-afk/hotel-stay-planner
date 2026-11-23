@@ -1,0 +1,68 @@
+[
+  {
+    "name": "Lakeview Rest",
+    "city": "Naivasha",
+    "price": 9500,
+    "rating": 4.6,
+    "freeCancellation": true,
+    "breakfast": false,
+    "tint": "#D3E8E3",
+    "description": "Quiet lakeside rooms with a garden, a short walk from the shore and boat rides.",
+    "image": "imageee 1.jpg"
+  },
+  {
+    "name": "Acacia Court",
+    "city": "Nakuru",
+    "price": 7200,
+    "rating": 4.4,
+    "freeCancellation": false,
+    "breakfast": true,
+    "tint": "#E6EDD3",
+    "description": "Comfortable town hotel with a hot breakfast each morning, close to the national park.",
+    "image": "imageee 2.jpg"
+  },
+  {
+    "name": "Coral Bay Suites",
+    "city": "Mombasa",
+    "price": 12800,
+    "rating": 4.7,
+    "freeCancellation": true,
+    "breakfast": false,
+    "tint": "#DCE9E1",
+    "description": "Sea-facing suites, a pool and a ten minute walk to the beach.",
+    "image": "imageee 3.jpg"
+  },
+  {
+    "name": "Savanna Gate",
+    "city": "Nairobi",
+    "price": 11000,
+    "rating": 4.3,
+    "freeCancellation": false,
+    "breakfast": true,
+    "tint": "#EEE3CF",
+    "description": "Business-friendly hotel with fast Wi-Fi and easy access to the city centre.",
+    "image": "imageee 4.jpg"
+  },
+  {
+    "name": "Rift Ridge Lodge",
+    "city": "Nakuru",
+    "price": 6400,
+    "rating": 4.2,
+    "freeCancellation": true,
+    "breakfast": false,
+    "tint": "#DDE7DF",
+    "description": "Simple, good-value lodge on the ridge with views over the valley.",
+    "image": "imageee 5.jpg"
+  },
+  {
+    "name": "Palm Dune Resort",
+    "city": "Diani",
+    "price": 15500,
+    "rating": 4.8,
+    "freeCancellation": false,
+    "breakfast": true,
+    "tint": "#D9E9E6",
+    "description": "Beachfront resort with palm gardens, two pools and breakfast included.",
+    "image": "imageee 6.jpg"
+  }
+]
