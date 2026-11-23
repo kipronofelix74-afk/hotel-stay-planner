@@ -1,4 +1,4 @@
-const BASE_URL = import.meta.env.VITE_BASE_URL;
+const BASE_URL = import.meta.env.DEV ? import.meta.env.VITE_BASE_URL : '';
 const STORAGE_KEY = 'stayplan_bookings';
 
 const headers = { 'Content-Type': 'application/json' };
@@ -35,7 +35,7 @@ export async function getBookings() {
   return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
 }
 
-export async function addBooking(booking) {
+export async function createBooking(booking) {
   if (BASE_URL) {
     const res = await fetch(`${BASE_URL}/bookings`, {
       method: 'POST',
@@ -49,6 +49,31 @@ export async function addBooking(booking) {
   const created = { ...booking, id: Date.now() };
   localStorage.setItem(STORAGE_KEY, JSON.stringify([...current, created]));
   return created;
+}
+
+export const addBooking = createBooking;
+
+export async function updateBooking(id, updates) {
+  if (BASE_URL) {
+    const res = await fetch(`${BASE_URL}/bookings/${id}`, {
+      method: 'PATCH',
+      headers,
+      body: JSON.stringify(updates),
+    });
+    if (!res.ok) throw new Error(`Could not update booking (${res.status})`);
+    return res.json();
+  }
+  const current = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+  let updatedItem = null;
+  const next = current.map((b) => {
+    if (String(b.id) === String(id)) {
+      updatedItem = { ...b, ...updates };
+      return updatedItem;
+    }
+    return b;
+  });
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
+  return updatedItem;
 }
 
 export async function deleteBooking(id) {
